@@ -16,15 +16,17 @@ public class DatabaseInit extends SQLiteOpenHelper {
     static final String ORI_TIME = "ori_time";
 
     static String SQL_CREATE_ENTRIES = "create table if not exists " + TABLE_NAME + " (" + ORI_ID +
-            " integer primary key autoincrement," + S_PITCH + " varchar(20) not null, " + S_ROLL +
-            " varchar(20) not null," + S_AZIMUTH + " varchar(20) not null," + ORI_TIME + " datetime default current_timestamp not null)";
+            " integer primary key autoincrement," + S_PITCH + " varchar(100) not null, " + S_ROLL +
+            " varchar(100) not null," + S_AZIMUTH + " varchar(100) not null," + ORI_TIME + " datetime default current_timestamp not null)";
 
     static String SQL_DELETE_ENTRIES = "drop table if exists " + TABLE_NAME + ";";
+
+    SQLiteDatabase db;
 
     public DatabaseInit(Context cnt) {
         super(cnt, DATABASE_NAME, null, DATABASE_VERSION);
 
-        SQLiteDatabase db = this.getWritableDatabase();
+        db = this.getWritableDatabase();
     }
 
     @Override

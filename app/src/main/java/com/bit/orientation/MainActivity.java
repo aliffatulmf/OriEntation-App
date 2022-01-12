@@ -17,24 +17,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myImg = findViewById(R.id.imageView);
-        drawable = getResources().getDrawable(R.drawable.cc);
-        myImg.setImageResource(R.drawable.arrow);
-
         Button sensorBtn = findViewById(R.id.sensor_menu);
         sensorBtn.setOnClickListener(view -> toSensor());
 
         Button listBtn = findViewById(R.id.database_menu);
         listBtn.setOnClickListener(view -> toList());
+
+        Button drop = findViewById(R.id.delete_record);
+        drop.setOnClickListener(view -> dropRecord());
     }
 
-    public void toSensor() {
+    private void toSensor() {
         Intent next = new Intent(this, SensorActivity.class);
         startActivity(next);
     }
 
-    protected void toList() {
+    private void toList() {
         Intent next = new Intent(this, ListActivity.class);
         startActivity(next);
+    }
+
+    private void dropRecord() {
+        DBInt dbi = new DBInt(this);
+        try {
+            dbi.open();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        dbi.drop();
+        dbi.create();
     }
 }

@@ -52,15 +52,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/delete_record"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:text="drop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/database_menu" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
