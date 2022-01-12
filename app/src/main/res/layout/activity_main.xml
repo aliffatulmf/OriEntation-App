@@ -62,4 +62,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/me"
+        android:layout_width="409dp"
+        android:layout_height="281dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="260dp"
+        android:contentDescription="@string/medesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/me" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
